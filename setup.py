@@ -3,7 +3,7 @@ from setuptools import setup
 
 setup(
     name="spectrometers",
-    version="0.0.2",
+    version="0.0.3",
     url="https://github.com/kanzure/python-spectrometers",
     license="BSD",
     author="Bryan Bishop",

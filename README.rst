@@ -47,6 +47,8 @@ Testing
 Changelog
 ----------
 
+* 0.0.3: get unit tests passing
+
 * 0.0.2: really minor README tweaks
 
 * 0.0.1: basic python module
