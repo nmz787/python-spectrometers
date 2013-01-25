@@ -4,7 +4,7 @@ from setuptools import setup
 setup(
     name="spectroid",
     version="0.0.1",
-    url="https://github.com/kanzure/spectroid",
+    url="https://github.com/kanzure/python-spectroid",
     license="BSD",
     author="Bryan Bishop",
     author_email="kanzure@gmail.com",
