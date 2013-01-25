@@ -2,12 +2,9 @@
 
 from spectrometers import Spectrometer
 
-class Nanodrop(Spectrometer):
-    """
-    Basic API for nanodrops.
-    """
+class openSpectrometer(spectrometer):
 	def __init__(self):
-		self.instrumentName='Nanodrop'
+		self.instrumentName='openSpectrometer'
 		raise NotImplementedError("This section isn't developed yet.")
 	def connect(self):
 		raise NotImplementedError("This section isn't developed yet.")
