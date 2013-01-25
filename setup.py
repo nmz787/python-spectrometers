@@ -8,7 +8,7 @@ setup(
     license="BSD",
     author="Bryan Bishop",
     author_email="kanzure@gmail.com",
-    description="API for spectrophotometers",
+    description="API for spectrophotometers (pre-alpha)",
     long_description=open("README.rst", "r").read(),
     packages=["spectroid"],
     zip_safe=False,
