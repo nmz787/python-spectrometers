@@ -16,4 +16,3 @@ class openSpectrometer(spectrometer):
 		raise NotImplementedError("This section isn't developed yet.")
 	def write(self):
 		raise NotImplementedError("This section isn't developed yet.")
-	

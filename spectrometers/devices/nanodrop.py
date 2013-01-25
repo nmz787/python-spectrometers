@@ -3,9 +3,9 @@
 from spectrometers import Spectrometer
 
 class Nanodrop(Spectrometer):
-    """
-    Basic API for nanodrops.
-    """
+	"""
+	Basic API for nanodrops.
+	"""
 	def __init__(self):
 		self.instrumentName='Nanodrop'
 		raise NotImplementedError("This section isn't developed yet.")
@@ -19,4 +19,3 @@ class Nanodrop(Spectrometer):
 		raise NotImplementedError("This section isn't developed yet.")
 	def write(self):
 		raise NotImplementedError("This section isn't developed yet.")
-	
