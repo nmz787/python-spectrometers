@@ -1,8 +1,10 @@
 spectrometers
 ~~~~~~~~~~~~~~~
 
-Spectroid is a simple python API for working with
-spectrometers/spectrophotometers. This is inspired by `openSpectrometer`_.
+Spectrometers is a simple python API for working with
+spectrometers/spectrophotometers. This was originally created as a gist to help
+with development of `openSpectrometer`_. This doesn't do anything interesting
+yet.
 
 .. _`openSpectrometer`: http://openspectrometer.com/
 
@@ -44,6 +46,8 @@ Testing
 
 Changelog
 ----------
+
+* 0.0.2: really minor README tweaks
 
 * 0.0.1: basic python module
 
