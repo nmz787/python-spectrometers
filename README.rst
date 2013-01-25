@@ -29,6 +29,8 @@ Install
 
     sudo pip install spectroid
 
+or maybe you hate package managers,
+
 .. code-block:: bash
 
     sudo python setup.py install
