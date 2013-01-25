@@ -2,7 +2,7 @@
 
 class Spectrometer(object):
     """
-    Exposes a simple API for spectrometers/spectrophotometers.
+    Simple API for working with spectrometers/spectrophotometers.
     """
 
     def __init__(self):
