@@ -166,9 +166,8 @@ def getLambdaMax(spectrum):
 	possHiPeak=index_max(possiblePeaks.values())
 	fig1.selectPoint(possiblePeaks.keys()[possHiPeak], possiblePeaks.values()[possHiPeak])
 	print 'selected peak'
-	print fig1.show()
-
-	return possiblePeaks
+	return fig1.show()
+	
 def calculate_pH(experiment_config_file_path):
 	cfgFile=yaml.load(open(experiment_config_file_path), OrderedDictYAMLLoader)
 	assert type(cfgFile) is OrderedDict
@@ -209,7 +208,13 @@ def calculate_pH(experiment_config_file_path):
 			bufferData.append(yaml.load(open(fileName)))
 		except IOError:
 			bufferData.append(yaml.load(open(os.path.join(os.path.dirname(experiment_config_file_path),fileName))))	
-	return getLambdaMax(averageSpectra(acidData))
+	acidLambdaMax = getLambdaMax(averageSpectra(acidData))
+	baseLambdaMax = getLambdaMax(averageSpectra(baseData))
+	
+	print 'lambda maxs:'
+	print acidLambdaMax
+	print baseLambdaMax
+
 
 class spectrum_plotter:
 	def __init__(self, xs, ys):
@@ -254,18 +259,18 @@ class spectrum_plotter:
 	def show(self):
 		self.win.show_all()
 		gtk.main()
-	def buttonClick(self, event):
 		return self.lastind
+	def buttonClick(self, event):
+		self.win.hide_all()
+		gtk.main_quit()
 	def onpick(self, event):
 		if event.artist!=self.line[0]: return True
 		
 		N = len(event.ind)
 		if not N: return True
-		print 'here'
 
 		if N > 1:
 			print '%i points found!' % N
-		print event.ind
 
 		# the click locations
 		x = event.mouseevent.xdata
