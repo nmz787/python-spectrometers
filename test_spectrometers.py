@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-from spectroid import Spectrometer
-from spectroid.devices import Nanodrop
-from spectroid.devices import Biowave2
+from spectrometers import Spectrometer
+from spectrometers.devices import Nanodrop
+from spectrometers.devices import Biowave2
 
 import json
 import unittest

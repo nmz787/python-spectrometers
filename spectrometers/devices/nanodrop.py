@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from spectroid import Spectrometer
+from spectrometers import Spectrometer
 
 class Nanodrop(Spectrometer):
     """

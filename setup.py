@@ -2,15 +2,15 @@
 from setuptools import setup
 
 setup(
-    name="spectroid",
+    name="spectrometers",
     version="0.0.1",
-    url="https://github.com/kanzure/python-spectroid",
+    url="https://github.com/kanzure/python-spectrometers",
     license="BSD",
     author="Bryan Bishop",
     author_email="kanzure@gmail.com",
     description="API for spectrophotometers (pre-alpha)",
     long_description=open("README.rst", "r").read(),
-    packages=["spectroid"],
+    packages=["spectrometers"],
     zip_safe=False,
     include_package_data=True,
     install_requires=[],

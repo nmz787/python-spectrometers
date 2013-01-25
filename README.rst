@@ -1,4 +1,4 @@
-spectroid
+spectrometers
 ~~~~~~~~~~~~~~~
 
 Spectroid is a simple python API for working with
@@ -13,7 +13,7 @@ here you go
 
 .. code-block:: python
 
-    from spectroid.devices import Nanodrop
+    from spectrometers.devices import Nanodrop
 
     nanodrop = Nanodrop()
 
@@ -27,7 +27,7 @@ Install
 
 .. code-block:: bash
 
-    sudo pip install spectroid
+    sudo pip install spectrometers
 
 or maybe you hate package managers,
 

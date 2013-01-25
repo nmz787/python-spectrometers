@@ -1,10 +1,10 @@
 SHELL := /bin/bash
 
 test-python3:
-	python3 test_spectroid.py
+	python3 test_spectrometers.py
 
 test-python2:
-	python test_spectroid.py
+	python test_spectrometers.py
 
 test: test-python3 test-python2
 
