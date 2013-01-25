@@ -163,15 +163,15 @@ def getLambdaMax(spectrum):
 	#plot the possiblePeaks detected using the curve fit to smooth noise
 	fig1.plot(possiblePeaks.keys(), possiblePeaks.values(), 'ro', ms=10)
 	
-	possHiPeak=index_max(yPeaks)
-	fig1.selectPoint(xPeaks[possHiPeak], yPeaks[possHiPeak])
-	fig1.show()
+	possHiPeak=index_max(possiblePeaks.values())
+	fig1.selectPoint(possiblePeaks.keys()[possHiPeak], possiblePeaks.values()[possHiPeak])
+	print 'selected peak'
+	print fig1.show()
 
 	return possiblePeaks
 def calculate_pH(experiment_config_file_path):
 	cfgFile=yaml.load(open(experiment_config_file_path), OrderedDictYAMLLoader)
- 
-    assert type(cfgFile) is OrderedDict
+	assert type(cfgFile) is OrderedDict
 	
 	if cfgFile['openSpectrometer experiment name']!='pH determination':
 		print 'config file not for pH experiment'
@@ -254,7 +254,7 @@ class spectrum_plotter:
 	def show(self):
 		self.win.show_all()
 		gtk.main()
-	def buttonClick(self):
+	def buttonClick(self, event):
 		return self.lastind
 	def onpick(self, event):
 		if event.artist!=self.line[0]: return True
