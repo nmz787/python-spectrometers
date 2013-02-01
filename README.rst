@@ -12,6 +12,7 @@ Example usage
 ----------
 
 here you go
+(Nanodrop code not yet actually implemented)
 
 .. code-block:: python
 
@@ -26,7 +27,7 @@ here you go
 
 Install
 ----------
-
+(pip archive not maintained by me, and does not reflect the current github code)
 .. code-block:: bash
 
     sudo pip install spectrometers
