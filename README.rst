@@ -43,6 +43,7 @@ pH determination
     >>>buffer absorbance0.282933333333
 
 Choosing lambda max, and the results of the pH determination
+
 .. image:: ./python-spectrometers.png
 
 Install
