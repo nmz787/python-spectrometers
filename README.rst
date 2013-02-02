@@ -28,10 +28,11 @@ here you go (Nanodrop code not yet actually implemented)
 pH determination
 
 .. code-block:: python
+
     import spectrometers
     spectrometers.calculate_pH("./examples/pH_experiment_data/pH_experiment_config.txt")
 
-    
+
     >>>acid lambda max: 445
     >>>acid absorbance: 0.260324
     >>>base absorbance: 0.0559506333333
