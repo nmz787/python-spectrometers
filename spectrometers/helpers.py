@@ -166,7 +166,8 @@ def getLambdaMax(spectrum):
 	possHiPeak=index_max(possiblePeaks.values())
 	fig1.selectPoint(possiblePeaks.keys()[possHiPeak], possiblePeaks.values()[possHiPeak])
 	print 'selected peak'
-	return fig1.show()
+	indexOfLambdaMax = fig1.show()
+	return xData[indexOfLambdaMax]
 	
 def calculate_pH(experiment_config_file_path):
 	cfgFile=yaml.load(open(experiment_config_file_path), OrderedDictYAMLLoader)
@@ -208,12 +209,31 @@ def calculate_pH(experiment_config_file_path):
 			bufferData.append(yaml.load(open(fileName)))
 		except IOError:
 			bufferData.append(yaml.load(open(os.path.join(os.path.dirname(experiment_config_file_path),fileName))))	
-	acidLambdaMax = getLambdaMax(averageSpectra(acidData))
-	baseLambdaMax = getLambdaMax(averageSpectra(baseData))
 	
-	print 'lambda maxs:'
-	print acidLambdaMax
-	print baseLambdaMax
+	acidAvg = averageSpectra(acidData)
+	baseAvg = averageSpectra(baseData)
+	bufferAvg = averageSpectra(bufferData)
+	
+	acidLambdaMax = getLambdaMax(acidAvg)
+	baseLambdaMax = getLambdaMax(baseAvg)
+	
+	acidLambdaAcidAbsorbance = acidAvg['datapoints'][acidLambdaMax]
+	acidLambdaBaseAbsorbance = baseAvg['datapoints'][acidLambdaMax]
+	acidLambdaBufferAbsorbance = bufferAvg['datapoints'][acidLambdaMax]
+
+	baseLambdaAcidAbsorbance = acidAvg['datapoints'][baseLambdaMax]
+	baseLambdaBaseAbsorbance = baseAvg['datapoints'][baseLambdaMax]
+	baseLambdaBufferAbsorbance = bufferAvg['datapoints'][baseLambdaMax]
+	
+	print 'acid lambda max: ' + str(acidLambdaMax)
+	print 'acid absorbance: ' + str(acidLambdaAcidAbsorbance)
+	print 'base absorbance: ' + str(acidLambdaBaseAbsorbance)
+	print 'buffer absorbance' + str(acidLambdaBufferAbsorbance)
+
+	print 'base lambda max: ' + str(baseLambdaMax)
+	print 'acid absorbance: ' + str(baseLambdaAcidAbsorbance)
+	print 'base absorbance: ' + str(baseLambdaBaseAbsorbance)
+	print 'buffer absorbance' + str(baseLambdaBufferAbsorbance)
 
 
 class spectrum_plotter:
